@@ -5,16 +5,18 @@
   # Next.js build command
   command = "npm run build"
   # Directory with the built files to deploy
-  publish = ".next"
+  publish = ".next/standalone"
   
   # Environment variables for build
   [build.environment]
-    # Next.js (in this repo) requires Node >= 20.9.0
-    NODE_VERSION = "20.9.0"
+    NODE_VERSION = "20"
     NPM_FLAGS = "--legacy-peer-deps"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+# Routing configuration
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
 
 # Cache rules for static assets
 [[headers]]
