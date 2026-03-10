@@ -1,26 +1,21 @@
-# Netlify Configuration for Next.js Portfolio
-# https://docs.netlify.com/configure-builds/file-based-configuration/
+# Netlify Configuration for Next.js
+# Uses the official Next.js plugin to generate the correct static + functions output.
 
 [build]
-  # Next.js build command
   command = "npm run build"
   # Directory with the built files to deploy
   publish = ".next"
   
   # Environment variables for build
   [build.environment]
-    NODE_VERSION = "20"
+    # Next.js in this repo requires Node >= 20.9.0
+    NODE_VERSION = "20.9.0"
     NPM_FLAGS = "--legacy-peer-deps"
 
 # Routing configuration
 # Next.js handles routing through its own mechanisms.
 
 # Cache rules for static assets
-[[headers]]
-  for = "/static/*"
-  [headers.values]
-    cache-control = "public, max-age=31536000, immutable"
-
 [[headers]]
   for = "/_next/static/*"
   [headers.values]
@@ -40,3 +35,4 @@
     X-XSS-Protection = "1; mode=block"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "microphone=(), geolocation=()"
+

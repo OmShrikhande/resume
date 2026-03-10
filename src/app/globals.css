@@ -38,6 +38,9 @@
 
 @layer base {
   :root {
+    --font-inter: "Inter", system-ui, sans-serif;
+    --font-playfair: "Playfair Display", Georgia, serif;
+
     --background: 40 33% 98%;
     --foreground: 25 15% 12%;
     --card: 40 25% 99%;
