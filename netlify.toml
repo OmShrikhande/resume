@@ -4,6 +4,8 @@
 [build]
   # Next.js build command
   command = "npm run build"
+  # Directory with the built files to deploy
+  publish = ".next"
   
   # Environment variables for build
   [build.environment]
